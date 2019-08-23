@@ -44,7 +44,7 @@ void FastbootCmd::execCmd(QString cmd)
         //qDebug() << list.at(0)+ " " + list.at(1)+ " " + list.at(2) + " " + Option::getInstance()->getWorkspace() + list.last();
         int error = q.execute("adb reboot-bootloader");
         if(error) {
-            return;
+            //return;
         }
         fastbootCmd->start(list.at(0)+ " " + list.at(1)+ " " + list.at(2) + " " + Option::getInstance()->getWorkspace() + list.last());
     }
