@@ -48,7 +48,14 @@ void MainWindow::on_lkBtn_clicked()
     emit doCmd("flash bootloader");
 }
 
+
+void MainWindow::on_vendorBtn_clicked()
+{
+    emit doCmd("flash vendor");
+}
+
 void MainWindow::on_autoReboot_checkBox_stateChanged(int value)
 {
    Option::getInstance()->set_autoReboot(value==0 ? false:true);
 }
+

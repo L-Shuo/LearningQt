@@ -10,6 +10,7 @@ FastbootCmd::FastbootCmd(QObject *parent) : QObject(parent)
     cmdMap.insert("flash modem","fastboot flash modem NON-HLOS.bin");
     cmdMap.insert("flash userdata","fastboot flash userdata userdata.img");
     cmdMap.insert("flash bootloader","fastboot flash aboot emmc_appsboot.mbn");
+    cmdMap.insert("flash vendor","fastboot flash vendor vendor.img");
 
     connect(fastbootCmd , SIGNAL(readyReadStandardOutput()) , this , SLOT(getOutput()));
     connect(fastbootCmd , SIGNAL(readyReadStandardError()) , this , SLOT(getOutput()));

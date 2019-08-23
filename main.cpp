@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QFile qss(":/style.qss");
+    QFile qss(":/style.css");
     qss.open(QFile::ReadOnly);
     qApp->setStyleSheet(qss.readAll());
 

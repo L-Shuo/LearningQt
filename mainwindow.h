@@ -28,6 +28,8 @@ private slots:
 
     void on_autoReboot_checkBox_stateChanged(int arg1);
 
+    void on_vendorBtn_clicked();
+
 signals:
     void doCmd(QString);
 
