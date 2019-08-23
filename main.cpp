@@ -2,8 +2,6 @@
 #include <QApplication>
 #include "option.h"
 
-QString Option::workspace = "";
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

@@ -6,12 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>361</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Tool</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="enabled">
@@ -23,7 +35,7 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <layout class="QGridLayout" name="gridLayout">
       <property name="sizeConstraint">
@@ -37,6 +49,9 @@
       </property>
       <item row="2" column="0">
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QPushButton" name="bootBtn">
           <property name="text">
@@ -72,6 +87,13 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QCheckBox" name="autoReboot_checkBox">
+          <property name="text">
+           <string>AutoReboot</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item row="0" column="1">
@@ -80,7 +102,7 @@
          <locale language="English" country="World"/>
         </property>
         <property name="text">
-         <string>\\172.16.195.51\liushuo2\workspace\cm01_O\out\target\product\cm01</string>
+         <string>\\172.16.195.51\liushuo2\workspace\cm01_O\out\target\product\cm01\</string>
         </property>
        </widget>
       </item>
@@ -92,21 +114,43 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QTextEdit" name="textEdit"/>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>443</width>
+     <width>600</width>
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFlash">
+    <property name="title">
+     <string>Flash</string>
+    </property>
+   </widget>
+   <addaction name="menuFlash"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -116,7 +160,11 @@
     <bool>true</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

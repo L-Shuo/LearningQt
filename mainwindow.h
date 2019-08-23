@@ -24,6 +24,13 @@ private slots:
     void on_lineEdit_textChanged(const QString &arg1);
     void on_bootBtn_clicked();
 
+    void on_lkBtn_clicked();
+
+    void on_autoReboot_checkBox_stateChanged(int arg1);
+
+signals:
+    void doCmd(QString);
+
 private:
     Ui::MainWindow *ui;
     Option *option;

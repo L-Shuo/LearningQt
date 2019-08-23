@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QProcess>
+#include <QMap>
 
 class FastbootCmd : public QObject
 {
@@ -15,8 +16,11 @@ signals:
 
 public slots:
     void getOutput();
+    void execCmd(QString cmd);
+
 private:
     QProcess *fastbootCmd;
+    QMap<QString,QString> cmdMap;
 };
 
 #endif // FASTBOOTCMD_H

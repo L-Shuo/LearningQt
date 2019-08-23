@@ -7,10 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    option = new Option(this);
     fbc = new FastbootCmd(this);
-    option->setWorkspace(ui->lineEdit->text());
+    Option::getInstance()->setWorkspace(ui->lineEdit->text());
     connect(fbc,SIGNAL(showInfo(QString)),this,SLOT(showCmdInfo(QString)));
+    connect(this,SIGNAL(doCmd(QString)),fbc,SLOT(execCmd(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -20,32 +20,35 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
-    qDebug() << arg1;
-    option->setWorkspace(arg1);
+    Option::getInstance()->setWorkspace(arg1);
 }
 
 void MainWindow::showCmdInfo(QString info)
 {
-    ui->textEdit->setText(info);
+    ui->textEdit->append(info);
 }
 
 void MainWindow::on_userDataBtn_clicked()
 {
-    QString image = "\\userdata.img";
-    QString partition = "userdata";
-    fbc->flash(image,partition);
+    emit doCmd("flash userdata");
 }
 
 void MainWindow::on_systemBtn_clicked()
 {
-    QString image = "\\system.img";
-    QString partition = "system";
-    fbc->flash(image,partition);
+    emit doCmd("flash system");
 }
 
 void MainWindow::on_bootBtn_clicked()
 {
-    QString image = "\\boot.img";
-    QString partition = "boot";
-    fbc->flash(image,partition);
+    emit doCmd("flash boot");
+}
+
+void MainWindow::on_lkBtn_clicked()
+{
+    emit doCmd("flash bootloader");
+}
+
+void MainWindow::on_autoReboot_checkBox_stateChanged(int value)
+{
+   Option::getInstance()->set_autoReboot(value==0 ? false:true);
 }

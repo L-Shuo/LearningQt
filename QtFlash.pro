@@ -25,17 +25,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        cmd.cpp \
+        dailyworkform.cpp \
         fastbootcmd.cpp \
         main.cpp \
         mainwindow.cpp \
         option.cpp
 
 HEADERS += \
+        cmd.h \
+        dailyworkform.h \
         fastbootcmd.h \
         mainwindow.h \
         option.h
 
 FORMS += \
+        dailyworkform.ui \
         mainwindow.ui
 
 # Default rules for deployment.
