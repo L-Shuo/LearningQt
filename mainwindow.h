@@ -24,6 +24,8 @@ private:
     Ui::MainWindow *ui;
     QStandardItemModel *ItemModel;
     Lottery *lottery_widget;
+    void initListView();
+    QStringList numList;
 };
 
 #endif // MAINWINDOW_H
