@@ -68,25 +68,25 @@ class Person : public RefBase {
 };
 extern "C" {
 void test_func() {
-    // 注意这里不要写成  sp<Person> *A = new Person()
-    // 也不要写成 sp<Person> A = new sp<Person>();
+        // 注意这里不要写成  sp<Person> *A = new Person()
+        // 也不要写成 sp<Person> A = new sp<Person>();
 
-    // 可以写成sp<Person> A(new Person())这种写法是对的
-    // A本身是一个对象，只是重载了->操作符，这个重载函数返回一个Person的指针对象
-    // 所以才可以以指针方式调用Person的成员函数，A->printInfo
-    sp<Person> A = new Person("zhangsan");
-    sp<Person> B = new Person("lisi");
-    cout << "#################################" << endl;
+        // 可以写成sp<Person> A(new Person())这种写法是对的
+        // A本身是一个对象，只是重载了->操作符，这个重载函数返回一个Person的指针对象
+        // 所以才可以以指针方式调用Person的成员函数，A->printInfo
+        sp<Person> A = new Person("zhangsan");
+        sp<Person> B = new Person("lisi");
+        cout << "#################################" << endl;
 
-    // 这里设置A B两个对象相互引用
-    // 如果在这里使用轻量级LightRefBase智能指针，test_func函数在调用返回后，A B两个对象都不会被自动删除
-    // 对于对象之间的相互引用，只能使用强弱指针的方式
-    A->setB(B);
-    B->setA(A);
+        // 这里设置A B两个对象相互引用
+        // 如果在这里使用轻量级LightRefBase智能指针，test_func函数在调用返回后，A B两个对象都不会被自动删除
+        // 对于对象之间的相互引用，只能使用强弱指针的方式
+        A->setB(B);
+        B->setA(A);
 
-    A->printInfo();
-    B->printInfo();
+        A->printInfo();
+        B->printInfo();
 
-    cout << "#################################" << endl;
-}
+        cout << "#################################" << endl;
+    }
 }

@@ -25,17 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
         RefBase.cpp \
         testsmart.cpp
 
 HEADERS += \
-        mainwindow.h \
         utils\LightRefBase.h \
         utils\RefBase.h \
         utils\StrongPointer.h \
         utils\TypeHelpers.h \
     utils/testsmart.h
 
-FORMS += \
-        mainwindow.ui
+FORMS +=
