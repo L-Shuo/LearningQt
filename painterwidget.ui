@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PainterWidget</class>
+ <widget class="QWidget" name="PainterWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MyBoard</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout"/>
+  <action name="saveAction">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="toolTip">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="clearAction">
+   <property name="text">
+    <string>清除</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
